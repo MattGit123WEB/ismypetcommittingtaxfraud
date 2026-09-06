@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>!!!! WEBSITE!!!!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>!!! WEBSITE WARS !!!</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Press+Start+2P&family=Pacifico&family=Permanent+Marker&family=Rye&family=Creepster&family=Paprika&display=swap');
@@ -18,15 +20,34 @@ body {
         radial-gradient(cyan 20%, transparent 21%);
     background-size: 45px 45px;
     color: red;
-    overflow-x: hidden;
     font-family: Arial;
+    cursor: crosshair;
 }
 
-#everything {
-    padding: 15px;
+marquee {
+    background: red;
+    color: yellow;
+    font-family: Papyrus;
+    font-size: 28px;
+    font-weight: bold;
+    border: 7px dotted cyan;
 }
 
-/* MAKE IT TERRIBLE */
+.warning {
+    background: yellow;
+    color: red;
+    font-family: Creepster;
+    font-size: 42px;
+    text-align: center;
+    animation: flash .4s infinite;
+    border: 8px ridge red;
+}
+
+@keyframes flash {
+    50% {
+        opacity: .15;
+    }
+}
 
 h1 {
     font-family: Impact;
@@ -35,7 +56,7 @@ h1 {
     border: 12px ridge red;
     font-size: 70px;
     text-align: center;
-    text-shadow: 5px 5px 0 lime, -5px -5px 0 red;
+    text-shadow: 5px 5px lime, -5px -5px red;
     transform: rotate(-2deg);
 }
 
@@ -47,32 +68,9 @@ h1 {
     padding: 25px;
     text-align: center;
     line-height: 2;
-    font-size: 14px;
-}
-
-marquee {
-    background: red;
-    color: yellow;
-    font-family: Papyrus;
-    font-size: 30px;
-    font-weight: bold;
-    border: 7px dotted cyan;
-}
-
-.warning {
-    background: yellow;
-    color: red;
-    font-family: "Creepster";
-    font-size: 45px;
-    text-align: center;
-    animation: flash .4s infinite;
-}
-
-@keyframes flash {
-    50% {
-        opacity: 0.2;
-        transform: rotate(1deg);
-    }
+    font-size: 13px;
+    max-width: 1100px;
+    margin: 25px auto;
 }
 
 .box {
@@ -80,13 +78,94 @@ marquee {
     background: cyan;
     padding: 25px;
     margin: 30px auto;
-    max-width: 1000px;
+    max-width: 1100px;
     text-align: center;
-    box-shadow: 15px 15px black;
+    box-shadow: 15px 15px #000;
 }
 
-p:nth-child(1) {
-    font-family: Arial;
+.random-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 350px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            yellow,
+            yellow 10px,
+            red 10px,
+            red 20px,
+            cyan 20px,
+            cyan 30px
+        );
+
+    border: 15px groove purple;
+    max-width: 1100px;
+    margin: auto;
+}
+
+button {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 18px;
+    margin: 12px;
+    cursor: pointer;
+    border: 10px outset;
+    box-shadow: 8px 8px #000;
+}
+
+button:hover {
+    transform: rotate(7deg) scale(1.15);
+}
+
+.b1 {
+    background: red;
+    color: yellow;
+    font-family: "Comic Sans MS";
+}
+
+.b2 {
+    background: cyan;
+    color: purple;
+    font-family: Papyrus;
+}
+
+.b3 {
+    background: lime;
+    color: blue;
+    font-family: Impact;
+}
+
+.b4 {
+    background: yellow;
+    color: red;
+    font-family: Creepster;
+}
+
+.b5 {
+    background: orange;
+    color: black;
+    font-family: "Press Start 2P";
+    font-size: 11px;
+}
+
+.b6 {
+    background: blue;
+    color: white;
+    font-family: Pacifico;
+}
+
+.b7 {
+    background: purple;
+    color: lime;
+    font-family: Rye;
+}
+
+.b8 {
+    background: black;
+    color: hotpink;
+    font-family: Paprika;
 }
 
 .font2 {
@@ -102,7 +181,7 @@ p:nth-child(1) {
 }
 
 .font4 {
-    font-family: "Pacifico";
+    font-family: Pacifico;
     font-size: 30px;
     color: purple;
 }
@@ -114,125 +193,96 @@ p:nth-child(1) {
 }
 
 .font6 {
-    font-family: "Rye";
+    font-family: Rye;
     font-size: 30px;
     color: green;
 }
 
 .font7 {
-    font-family: "Creepster";
+    font-family: Creepster;
     font-size: 45px;
     color: darkred;
 }
 
 .font8 {
-    font-family: "Paprika";
+    font-family: Paprika;
     font-size: 28px;
     color: brown;
 }
 
-button {
-    font-size: 25px;
-    font-weight: bold;
-    padding: 18px;
-    margin: 12px;
-    cursor: pointer;
-    border: 10px outset;
-    box-shadow: 8px 8px black;
-    transition: .1s;
-}
-
-button:hover {
-    transform: rotate(7deg) scale(1.15);
-}
-
-.b1 { background: red; color: yellow; font-family: Comic Sans MS; }
-.b2 { background: cyan; color: purple; font-family: Papyrus; }
-.b3 { background: lime; color: blue; font-family: Impact; }
-.b4 { background: yellow; color: red; font-family: Creepster; }
-.b5 { background: orange; color: black; font-family: "Press Start 2P"; font-size: 12px; }
-.b6 { background: blue; color: white; font-family: Pacifico; }
-.b7 { background: purple; color: lime; font-family: Rye; }
-.b8 { background: black; color: hotpink; font-family: Paprika; }
-
-.random-area {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    min-height: 300px;
-    background: repeating-linear-gradient(
-        45deg,
-        yellow,
-        yellow 10px,
-        red 10px,
-        red 20px,
-        cyan 20px,
-        cyan 30px
-    );
-    border: 15px groove purple;
-}
-
-/* THE CORRECT BUTTON IS DISGUISED */
-
-#navButton {
-    background: hotpink;
-    color: lime;
-    font-family: "Comic Sans MS";
-    border: 9px outset yellow;
-}
-
-/* WRONG ANSWER POPUP */
-
 #notHere {
     display: none;
+
     position: fixed;
     z-index: 100;
+
     top: 20%;
     left: 50%;
+
     transform: translateX(-50%) rotate(-4deg);
+
     width: 80%;
     max-width: 600px;
+
     background: red;
     color: yellow;
+
     border: 20px ridge cyan;
+
     padding: 40px;
+
     text-align: center;
+
     font-family: Impact;
     font-size: 60px;
-    text-shadow: 5px 5px black;
-    box-shadow: 20px 20px black;
+
+    text-shadow: 5px 5px #000;
+
+    box-shadow: 20px 20px #000;
 }
 
 #notHere small {
     display: block;
+
     font-family: Papyrus;
     font-size: 25px;
+
     margin-top: 20px;
 }
 
-/* WIN SCREEN */
-
 #winScreen {
     display: none;
+
     position: fixed;
+
     inset: 0;
+
     z-index: 999;
+
     background: lime;
+
     color: darkgreen;
+
     text-align: center;
+
     padding-top: 15vh;
+
     font-family: Impact;
 }
 
 #winScreen h2 {
     font-size: 100px;
+
     margin: 0;
+
     text-shadow: 7px 7px yellow;
 }
 
 #winScreen p {
     font-family: "Comic Sans MS";
+
     font-size: 40px;
+
     color: blue;
 }
 
@@ -244,9 +294,13 @@ button:hover {
 footer {
     background: black;
     color: lime;
+
     padding: 30px;
+
     text-align: center;
+
     font-family: "Courier New";
+
     border: 15px double red;
 }
 </style>
@@ -254,176 +308,323 @@ footer {
 
 <body>
 
-<div id="everything">
-
-<marquee scrollamount="20">
-🚨 WELCOME TO THE BEST WEBSITE EVER MADE 🚨 FIND THE NAVIGATION BUTTON!!! 🚨
+<marquee scrollamount="18">
+🚨🚨🚨 WEBSITE WARS!!! FIND THE THING!!! CLICK THINGS!!! 🚨🚨🚨
 </marquee>
 
 <div class="warning">
-⚠️ DO NOT CLICK RANDOM BUTTONS ⚠️
+⚠️ THIS WEBSITE WAS A MISTAKE ⚠️
 </div>
 
-<h1>🌐 WEBSITE WARS!!! 🌐</h1>
+<h1>
+🌐 WEBSITE WARS!!! 🌐
+</h1>
 
 <div class="challenge">
-    <h2>🔥 CURRENT CHALLENGES 🔥</h2>
 
-    <p>
-        CHALLENGE #1: COUNT HOW MANY DIFFERENT FONTS ARE ON THIS WEBSITE.
-    </p>
+<h2>🔥 YOUR CHALLENGES 🔥</h2>
 
-    <p>
-        CHALLENGE #2: FIND THE NAVIGATION BUTTON.
-    </p>
+<p>
+CHALLENGE #1:
+COUNT ALL THE DIFFERENT FONTS.
+</p>
 
-    <p>
-        ⚠️ HINT: IT DOES NOT NECESSARILY SAY "NAVIGATION" ⚠️
-    </p>
+<p>
+CHALLENGE #2:
+FIND THE NAVIGATION BUTTON.
+</p>
+
+<p>
+CHALLENGE #3:
+FIGURE OUT WHICH BUTTONS GO SOMEWHERE.
+</p>
+
+<p>
+⚠️ SOME BUTTONS ARE USEFUL. MOST ARE NOT. ⚠️
+</p>
+
 </div>
 
 
 <div class="box">
 
-    <div class="font2">HELLO I AM FONT NUMBER MAYBE</div>
+<div class="font2">
+THIS IS A NORMAL SENTENCE.
+</div>
 
-    <div class="font3">This website was designed by professionals.</div>
+<div class="font3">
+THIS IS DEFINITELY NORMAL.
+</div>
 
-    <div class="font4">Probably.</div>
+<div class="font4">
+WHY IS THIS FONT HERE?
+</div>
 
-    <div class="font5">PLEASE DO NOT JUDGE US.</div>
+<div class="font5">
+WELCOME TO THE INTERNET.
+</div>
 
-    <div class="font6">THE BUTTON COULD BE ANYWHERE.</div>
+<div class="font6">
+PLEASE ENJOY.
+</div>
 
-    <div class="font7">OR COULD IT?!?!?!</div>
+<div class="font7">
+AAAAAAAAAAAAAAAA
+</div>
 
-    <div class="font8">We spent a lot of money on this website.</div>
+<div class="font8">
+seriously what happened
+</div>
 
 </div>
 
 
 <div class="random-area">
 
-    <button class="b1 wrong">CLICK HERE!!!</button>
-    <button class="b2 wrong">FREE IPHONE</button>
-    <button class="b3 wrong">IMPORTANT BUTTON</button>
-    <button class="b4 wrong">DO NOT CLICK</button>
+<button class="b1 wrong">
+CLICK HERE!!!
+</button>
 
-    <!-- CORRECT BUTTON -->
-    <button id="navButton" onclick="youWin()">
-        🧭 ABSOLUTELY NOT THE NAVIGATION BUTTON 🧭
-    </button>
+<button class="b2 wrong">
+FREE IPHONE
+</button>
 
-    <button class="b5 wrong">PROBABLY NAVIGATION</button>
-    <button class="b6 wrong">TAKE ME SOMEWHERE</button>
-    <button class="b7 wrong">MENU???</button>
-    <button class="b8 wrong">MYSTERY BUTTON</button>
+<button class="b3"
+onclick="location.href='friends.html'">
+📸 TOTALLY NORMAL PHOTOS
+</button>
 
-    <button class="b1 wrong">BUTTON</button>
-    <button class="b2 wrong">BUTTON 2</button>
-    <button class="b3 wrong">BUTTON 3</button>
-    <button class="b4 wrong">THE RIGHT ONE?</button>
-    <button class="b5 wrong">NAVIGATION MAYBE</button>
-    <button class="b6 wrong">SECRET</button>
-    <button class="b7 wrong">ENTER HERE</button>
-    <button class="b8 wrong">HELP</button>
+<button class="b4 wrong">
+DO NOT CLICK
+</button>
+
+<button class="b5 wrong">
+IMPORTANT
+</button>
+
+<button class="b6"
+onclick="location.href='secret.html'">
+⚠️ DO NOT SEE THIS ⚠️
+</button>
+
+<button class="b7 wrong">
+MENU???
+</button>
+
+<button class="b8 wrong">
+MYSTERY
+</button>
+
+<button class="b1"
+onclick="location.href='rules.html'">
+📜 BORING RULES
+</button>
+
+<button class="b2"
+onclick="location.href='about.html'">
+🤔 WHY DOES THIS EXIST?
+</button>
+
+<button class="b3 wrong">
+NAVIGATION
+</button>
+
+<button class="b4 wrong">
+THE RIGHT BUTTON
+</button>
+
+<button class="b5 wrong">
+CLICK ME
+</button>
+
+<button class="b6 wrong">
+SECRET BUTTON
+</button>
+
+<button class="b7 wrong">
+GO SOMEWHERE
+</button>
+
+<button class="b8 wrong">
+HELP
+</button>
 
 </div>
+
 
 <div class="box">
-    <h2 class="font7">🚧 WEBSITE UNDER CONSTRUCTION SINCE 2004 🚧</h2>
 
-    <p class="font2">VISITOR COUNTER: 0000000000000000047</p>
+<h2 class="font7">
+🚧 NOTHING IMPORTANT BELOW 🚧
+</h2>
 
-    <p class="font5">
-        BEST VIEWED ON A COMPUTER FROM 1998
-    </p>
+<p class="font5">
+KEEP SCROLLING FOR NO REASON.
+</p>
+
 </div>
 
+
+<!-- HUGE EMPTY SPACE -->
+
+<div style="
+height:1100px;
+text-align:center;
+padding-top:500px;
+">
+
+<p style="
+font:45px Papyrus;
+color:blue;
+background:yellow;
+">
+wow you really scrolled this far
+</p>
+
+<p style="
+font:20px Courier New;
+color:red;
+">
+there is definitely nothing down here
+</p>
+
 </div>
 
 
-<!-- WRONG ANSWER -->
+<!-- NAVIGATION BUTTON -->
+
+<div class="box">
+
+<h2 style="
+font:70px Impact;
+color:red;
+">
+🎁 CONGRATULATIONS 🎁
+</h2>
+
+<p style="
+font:30px Comic Sans MS;
+">
+You found the suspiciously boring button.
+</p>
+
+<button
+onclick="youWin()"
+style="
+background:hotpink;
+color:lime;
+font-family:Comic Sans MS;
+">
+
+🧭 NAVIGATION
+
+</button>
+
+</div>
+
+
+<!-- WRONG BUTTON POPUP -->
 
 <div id="notHere">
-    ❌ NOT HERE!!! ❌
 
-    <small>
-        WRONG BUTTON!!! TRY AGAIN!!!
-    </small>
+❌ NOT HERE!!! ❌
 
-    <button onclick="closePopup()">
-        OK I AM ASHAMED
-    </button>
+<small>
+WRONG BUTTON!!! TRY AGAIN!!!
+</small>
+
+<button onclick="closePopup()">
+OK 😭
+</button>
+
 </div>
 
 
-<!-- WIN -->
+<!-- WIN SCREEN -->
 
 <div id="winScreen">
 
-    <h2>🎉 YOU FOUND IT!!! 🎉</h2>
+<h2>
+🎉 YOU FOUND IT!!! 🎉
+</h2>
 
-    <p>
-        🟢 NAVIGATION BUTTON LOCATED 🟢
-    </p>
+<p>
+🟢 NAVIGATION BUTTON LOCATED 🟢
+</p>
 
-    <p>
-        YOU HAVE WON ABSOLUTELY NOTHING!!!
-    </p>
+<p>
+YOU WIN!!!
+</p>
 
-    <p style="font-size:80px">
-        🏆🏆🏆
-    </p>
+<p style="font-size:80px">
+🏆🏆🏆
+</p>
 
-    <button id="close" onclick="resetGame()">
-        RESET WEBSITE
-    </button>
+<button
+id="close"
+onclick="resetGame()">
+
+BACK TO WEBSITE
+
+</button>
 
 </div>
 
 
 <footer>
 
-    <marquee scrollamount="8">
-        ⭐ THANK YOU FOR VISITING!!! ⭐ PLEASE COME BACK!!! ⭐ WE NEED VISITORS!!! ⭐
-    </marquee>
+<marquee>
+⭐ BEST VIEWED ON INTERNET EXPLORER 6 ⭐
+LAST UPDATED 2004 ⭐
+</marquee>
+
+<p>
+© 2026 WEBSITE WARS™
+</p>
 
 </footer>
 
 
 <script>
 
-/* EVERY WRONG BUTTON */
+document
+.querySelectorAll(".wrong")
+.forEach(button => {
 
-document.querySelectorAll(".wrong").forEach(button => {
+    button.onclick = function() {
 
-    button.addEventListener("click", function() {
+        document
+        .getElementById("notHere")
+        .style.display = "block";
 
-        document.getElementById("notHere").style.display = "block";
-
-    });
+    };
 
 });
 
 
 function closePopup() {
 
-    document.getElementById("notHere").style.display = "none";
+    document
+    .getElementById("notHere")
+    .style.display = "none";
 
 }
 
 
 function youWin() {
 
-    document.getElementById("winScreen").style.display = "block";
+    document
+    .getElementById("winScreen")
+    .style.display = "block";
 
 }
 
 
 function resetGame() {
 
-    document.getElementById("winScreen").style.display = "none";
+    document
+    .getElementById("winScreen")
+    .style.display = "none";
 
 }
 
