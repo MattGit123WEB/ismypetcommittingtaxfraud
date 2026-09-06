@@ -1,249 +1,433 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Is My Pet Committing Tax Fraud? — Official Audit Quiz</title>
-<meta name="description" content="Take the official 8-question audit to determine whether your pet is committing tax fraud. Results in under 60 seconds." />
-<meta property="og:title" content="Is My Pet Committing Tax Fraud?" />
-<meta property="og:description" content="The internet's only certified pet tax fraud detection questionnaire." />
-<meta property="og:type" content="website" />
+<title>!!!! WEBSITE!!!!</title>
+
 <style>
-  :root {
-    --background: oklch(0.94 0.04 85);
-    --foreground: oklch(0.22 0.04 50);
-    --card: oklch(0.985 0.015 90);
-    --muted: oklch(0.9 0.04 85);
-    --muted-foreground: oklch(0.45 0.04 60);
-    --primary: oklch(0.35 0.13 25);
-    --primary-foreground: oklch(0.98 0.02 90);
-    --accent: oklch(0.78 0.16 65);
-    --accent-foreground: oklch(0.22 0.05 40);
-    --destructive: oklch(0.5 0.22 28);
-    --ink: oklch(0.22 0.04 50);
-    --stamp: oklch(0.5 0.22 28);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background-color: var(--background);
-    color: var(--foreground);
-    font-family: ui-serif, Georgia, "Times New Roman", serif;
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Press+Start+2P&family=Pacifico&family=Permanent+Marker&family=Rye&family=Creepster&family=Paprika&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #ff00ff;
     background-image:
-      repeating-linear-gradient(0deg, transparent 0 31px, color-mix(in oklab, var(--ink) 8%, transparent) 31px 32px),
-      radial-gradient(circle at 20% 10%, color-mix(in oklab, var(--ink) 6%, transparent), transparent 40%),
-      radial-gradient(circle at 80% 90%, color-mix(in oklab, var(--ink) 6%, transparent), transparent 40%);
-    min-height: 100vh;
-    padding: 2.5rem 1rem;
-  }
-  h1, h2, h3 { font-family: "Courier New", ui-monospace, monospace; letter-spacing: 0.02em; }
-  .container { max-width: 42rem; margin: 0 auto; }
-  header { text-align: center; margin-bottom: 2rem; }
-  .badge {
-    display: inline-block;
-    border: 2px solid var(--foreground);
-    padding: 0.25rem 0.75rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--muted-foreground);
-    margin-bottom: 0.75rem;
-    font-family: "Courier New", monospace;
-  }
-  h1 {
-    font-size: clamp(1.875rem, 5vw, 3rem);
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 1.1;
-  }
-  .subtitle {
-    max-width: 28rem;
-    margin: 1rem auto 0;
-    font-style: italic;
-    color: var(--muted-foreground);
-    font-size: 0.95rem;
-  }
-  .card {
-    position: relative;
-    border-radius: 0.375rem;
-    border: 2px solid var(--foreground);
-    background: var(--card);
-    padding: 1.5rem;
-    box-shadow: 6px 6px 0 0 var(--ink);
-  }
-  @media (min-width: 768px) { .card { padding: 2.5rem; } }
-  .meta {
-    display: flex;
-    justify-content: space-between;
-    font-family: "Courier New", monospace;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--muted-foreground);
-    margin-bottom: 1.5rem;
-  }
-  .progress { height: 0.5rem; width: 100%; background: var(--muted); border-radius: 9999px; overflow: hidden; margin-bottom: 1.5rem; }
-  .progress > div { height: 100%; background: var(--primary); transition: width .3s; }
-  .question { font-size: 1.25rem; font-weight: bold; margin-bottom: 1.5rem; line-height: 1.35; font-family: inherit; }
-  @media (min-width: 768px) { .question { font-size: 1.5rem; } }
-  .options { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-  .opt {
-    width: 100%;
-    border: 2px solid var(--foreground);
-    background: var(--background);
-    padding: 0.75rem 1rem;
-    text-align: left;
-    font: inherit;
-    font-weight: 500;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: all .15s;
-  }
-  .opt:hover { transform: translateY(-2px); background: var(--accent); color: var(--accent-foreground); box-shadow: 3px 3px 0 0 var(--ink); }
-  .letter { display: inline-block; margin-right: 0.75rem; font-family: "Courier New", monospace; font-size: 0.875rem; color: var(--muted-foreground); }
-  .result { text-align: center; }
-  .label {
-    font-family: "Courier New", monospace;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--muted-foreground);
-    margin-bottom: 1rem;
-  }
-  .stamp {
-    color: var(--stamp);
-    border: 4px double var(--stamp);
-    padding: 0.4rem 1rem;
-    font-family: "Courier New", monospace;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    transform: rotate(-8deg);
-    display: inline-block;
-    opacity: 0.92;
-    margin-bottom: 1.5rem;
-  }
-  .verdict { font-size: clamp(2rem, 6vw, 3rem); font-weight: 900; text-transform: uppercase; margin-bottom: 1rem; }
-  .verdict.guilty { color: var(--destructive); }
-  .verdict.warn { color: var(--primary); }
-  .body-text { max-width: 28rem; margin: 0 auto; color: var(--muted-foreground); font-size: 1rem; line-height: 1.6; }
-  .score { margin-top: 1.5rem; font-family: "Courier New", monospace; font-size: 0.875rem; color: var(--muted-foreground); }
-  .reset {
-    margin-top: 2rem;
-    border: 2px solid var(--foreground);
-    background: var(--primary);
-    color: var(--primary-foreground);
-    padding: 0.75rem 1.5rem;
-    font-family: "Courier New", monospace;
-    font-size: 0.875rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: all .15s;
-  }
-  .reset:hover { transform: translateY(-2px); box-shadow: 3px 3px 0 0 var(--ink); }
-  footer {
-    margin-top: 2.5rem;
+        radial-gradient(yellow 20%, transparent 21%),
+        radial-gradient(cyan 20%, transparent 21%);
+    background-size: 45px 45px;
+    color: red;
+    overflow-x: hidden;
+    font-family: Arial;
+}
+
+#everything {
+    padding: 15px;
+}
+
+/* MAKE IT TERRIBLE */
+
+h1 {
+    font-family: Impact;
+    color: yellow;
+    background: blue;
+    border: 12px ridge red;
+    font-size: 70px;
     text-align: center;
-    font-family: "Courier New", monospace;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--muted-foreground);
-  }
+    text-shadow: 5px 5px 0 lime, -5px -5px 0 red;
+    transform: rotate(-2deg);
+}
+
+.challenge {
+    font-family: "Press Start 2P";
+    background: black;
+    color: lime;
+    border: 10px dashed yellow;
+    padding: 25px;
+    text-align: center;
+    line-height: 2;
+    font-size: 14px;
+}
+
+marquee {
+    background: red;
+    color: yellow;
+    font-family: Papyrus;
+    font-size: 30px;
+    font-weight: bold;
+    border: 7px dotted cyan;
+}
+
+.warning {
+    background: yellow;
+    color: red;
+    font-family: "Creepster";
+    font-size: 45px;
+    text-align: center;
+    animation: flash .4s infinite;
+}
+
+@keyframes flash {
+    50% {
+        opacity: 0.2;
+        transform: rotate(1deg);
+    }
+}
+
+.box {
+    border: 15px outset lime;
+    background: cyan;
+    padding: 25px;
+    margin: 30px auto;
+    max-width: 1000px;
+    text-align: center;
+    box-shadow: 15px 15px black;
+}
+
+p:nth-child(1) {
+    font-family: Arial;
+}
+
+.font2 {
+    font-family: "Comic Neue";
+    font-size: 30px;
+    color: blue;
+}
+
+.font3 {
+    font-family: Papyrus;
+    font-size: 35px;
+    color: red;
+}
+
+.font4 {
+    font-family: "Pacifico";
+    font-size: 30px;
+    color: purple;
+}
+
+.font5 {
+    font-family: "Permanent Marker";
+    font-size: 35px;
+    color: orange;
+}
+
+.font6 {
+    font-family: "Rye";
+    font-size: 30px;
+    color: green;
+}
+
+.font7 {
+    font-family: "Creepster";
+    font-size: 45px;
+    color: darkred;
+}
+
+.font8 {
+    font-family: "Paprika";
+    font-size: 28px;
+    color: brown;
+}
+
+button {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 18px;
+    margin: 12px;
+    cursor: pointer;
+    border: 10px outset;
+    box-shadow: 8px 8px black;
+    transition: .1s;
+}
+
+button:hover {
+    transform: rotate(7deg) scale(1.15);
+}
+
+.b1 { background: red; color: yellow; font-family: Comic Sans MS; }
+.b2 { background: cyan; color: purple; font-family: Papyrus; }
+.b3 { background: lime; color: blue; font-family: Impact; }
+.b4 { background: yellow; color: red; font-family: Creepster; }
+.b5 { background: orange; color: black; font-family: "Press Start 2P"; font-size: 12px; }
+.b6 { background: blue; color: white; font-family: Pacifico; }
+.b7 { background: purple; color: lime; font-family: Rye; }
+.b8 { background: black; color: hotpink; font-family: Paprika; }
+
+.random-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 300px;
+    background: repeating-linear-gradient(
+        45deg,
+        yellow,
+        yellow 10px,
+        red 10px,
+        red 20px,
+        cyan 20px,
+        cyan 30px
+    );
+    border: 15px groove purple;
+}
+
+/* THE CORRECT BUTTON IS DISGUISED */
+
+#navButton {
+    background: hotpink;
+    color: lime;
+    font-family: "Comic Sans MS";
+    border: 9px outset yellow;
+}
+
+/* WRONG ANSWER POPUP */
+
+#notHere {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+    width: 80%;
+    max-width: 600px;
+    background: red;
+    color: yellow;
+    border: 20px ridge cyan;
+    padding: 40px;
+    text-align: center;
+    font-family: Impact;
+    font-size: 60px;
+    text-shadow: 5px 5px black;
+    box-shadow: 20px 20px black;
+}
+
+#notHere small {
+    display: block;
+    font-family: Papyrus;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+/* WIN SCREEN */
+
+#winScreen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: lime;
+    color: darkgreen;
+    text-align: center;
+    padding-top: 15vh;
+    font-family: Impact;
+}
+
+#winScreen h2 {
+    font-size: 100px;
+    margin: 0;
+    text-shadow: 7px 7px yellow;
+}
+
+#winScreen p {
+    font-family: "Comic Sans MS";
+    font-size: 40px;
+    color: blue;
+}
+
+#close {
+    background: white;
+    color: green;
+}
+
+footer {
+    background: black;
+    color: lime;
+    padding: 30px;
+    text-align: center;
+    font-family: "Courier New";
+    border: 15px double red;
+}
 </style>
 </head>
+
 <body>
-  <main class="container">
-    <header>
-      <div class="badge">Form 1040-PAW · Rev. 2026</div>
-      <h1>Is My Pet Committing<br />Tax Fraud?</h1>
-      <p class="subtitle">The internet's only certified questionnaire for detecting fiscal malfeasance in domestic animals. Answer honestly. They are watching.</p>
-    </header>
-    <section class="card" id="card"></section>
-    <footer>Department of Pet Revenue · Not affiliated with any actual government</footer>
-  </main>
+
+<div id="everything">
+
+<marquee scrollamount="20">
+🚨 WELCOME TO THE BEST WEBSITE EVER MADE 🚨 FIND THE NAVIGATION BUTTON!!! 🚨
+</marquee>
+
+<div class="warning">
+⚠️ DO NOT CLICK RANDOM BUTTONS ⚠️
+</div>
+
+<h1>🌐 WEBSITE WARS!!! 🌐</h1>
+
+<div class="challenge">
+    <h2>🔥 CURRENT CHALLENGES 🔥</h2>
+
+    <p>
+        CHALLENGE #1: COUNT HOW MANY DIFFERENT FONTS ARE ON THIS WEBSITE.
+    </p>
+
+    <p>
+        CHALLENGE #2: FIND THE NAVIGATION BUTTON.
+    </p>
+
+    <p>
+        ⚠️ HINT: IT DOES NOT NECESSARILY SAY "NAVIGATION" ⚠️
+    </p>
+</div>
+
+
+<div class="box">
+
+    <div class="font2">HELLO I AM FONT NUMBER MAYBE</div>
+
+    <div class="font3">This website was designed by professionals.</div>
+
+    <div class="font4">Probably.</div>
+
+    <div class="font5">PLEASE DO NOT JUDGE US.</div>
+
+    <div class="font6">THE BUTTON COULD BE ANYWHERE.</div>
+
+    <div class="font7">OR COULD IT?!?!?!</div>
+
+    <div class="font8">We spent a lot of money on this website.</div>
+
+</div>
+
+
+<div class="random-area">
+
+    <button class="b1 wrong">CLICK HERE!!!</button>
+    <button class="b2 wrong">FREE IPHONE</button>
+    <button class="b3 wrong">IMPORTANT BUTTON</button>
+    <button class="b4 wrong">DO NOT CLICK</button>
+
+    <!-- CORRECT BUTTON -->
+    <button id="navButton" onclick="youWin()">
+        🧭 ABSOLUTELY NOT THE NAVIGATION BUTTON 🧭
+    </button>
+
+    <button class="b5 wrong">PROBABLY NAVIGATION</button>
+    <button class="b6 wrong">TAKE ME SOMEWHERE</button>
+    <button class="b7 wrong">MENU???</button>
+    <button class="b8 wrong">MYSTERY BUTTON</button>
+
+    <button class="b1 wrong">BUTTON</button>
+    <button class="b2 wrong">BUTTON 2</button>
+    <button class="b3 wrong">BUTTON 3</button>
+    <button class="b4 wrong">THE RIGHT ONE?</button>
+    <button class="b5 wrong">NAVIGATION MAYBE</button>
+    <button class="b6 wrong">SECRET</button>
+    <button class="b7 wrong">ENTER HERE</button>
+    <button class="b8 wrong">HELP</button>
+
+</div>
+
+<div class="box">
+    <h2 class="font7">🚧 WEBSITE UNDER CONSTRUCTION SINCE 2004 🚧</h2>
+
+    <p class="font2">VISITOR COUNTER: 0000000000000000047</p>
+
+    <p class="font5">
+        BEST VIEWED ON A COMPUTER FROM 1998
+    </p>
+</div>
+
+</div>
+
+
+<!-- WRONG ANSWER -->
+
+<div id="notHere">
+    ❌ NOT HERE!!! ❌
+
+    <small>
+        WRONG BUTTON!!! TRY AGAIN!!!
+    </small>
+
+    <button onclick="closePopup()">
+        OK I AM ASHAMED
+    </button>
+</div>
+
+
+<!-- WIN -->
+
+<div id="winScreen">
+
+    <h2>🎉 YOU FOUND IT!!! 🎉</h2>
+
+    <p>
+        🟢 NAVIGATION BUTTON LOCATED 🟢
+    </p>
+
+    <p>
+        YOU HAVE WON ABSOLUTELY NOTHING!!!
+    </p>
+
+    <p style="font-size:80px">
+        🏆🏆🏆
+    </p>
+
+    <button id="close" onclick="resetGame()">
+        RESET WEBSITE
+    </button>
+
+</div>
+
+
+<footer>
+
+    <marquee scrollamount="8">
+        ⭐ THANK YOU FOR VISITING!!! ⭐ PLEASE COME BACK!!! ⭐ WE NEED VISITORS!!! ⭐
+    </marquee>
+
+</footer>
+
 
 <script>
-const QUESTIONS = [
-  { q: "Does your pet disappear for unexplained periods of time?", a: [
-    { label: "Never, they're always loafing on the couch", score: 0 },
-    { label: "Occasionally, for a 'nap'", score: 2 },
-    { label: "Daily, with a tiny briefcase", score: 5 }]},
-  { q: "Has your pet ever received mail addressed to an LLC?", a: [
-    { label: "No", score: 0 },
-    { label: "Once. It was suspicious.", score: 3 },
-    { label: "Yes — 'Mr. Whiskers Holdings, LLC'", score: 6 }]},
-  { q: "How does your pet react when you mention the word 'audit'?", a: [
-    { label: "Indifferent", score: 0 },
-    { label: "Ears perk up suspiciously", score: 3 },
-    { label: "Knocks the laptop off the table immediately", score: 5 }]},
-  { q: "Are there unexplained Amazon packages in your pet's name?", a: [
-    { label: "No", score: 0 },
-    { label: "A few catnip-related items", score: 2 },
-    { label: "Yes, including a paper shredder", score: 6 }]},
-  { q: "Has your pet claimed any dependents this year?", a: [
-    { label: "Of course not, they're a pet", score: 0 },
-    { label: "The houseplants, maybe", score: 2 },
-    { label: "All 14 of the neighborhood squirrels", score: 5 }]},
-  { q: "Does your pet maintain offshore accounts (e.g. under the couch)?", a: [
-    { label: "Just buried treats", score: 1 },
-    { label: "A modest sock-drawer reserve", score: 3 },
-    { label: "Documented holdings in the Cayman Litter Box", score: 6 }]},
-  { q: "How does your pet's 'business expense' pile look?", a: [
-    { label: "What pile?", score: 0 },
-    { label: "A few chewed receipts", score: 2 },
-    { label: "An organized binder labeled 'DO NOT OPEN'", score: 5 }]},
-  { q: "Does your pet make eye contact when you ask about their income?", a: [
-    { label: "Yes, innocently", score: 0 },
-    { label: "Looks away, slowly", score: 3 },
-    { label: "Pretends to not speak English", score: 5 }]},
-];
-const MAX = QUESTIONS.reduce((s,q)=>s+Math.max(...q.a.map(x=>x.score)),0);
-let step = 0, answers = [];
 
-function verdict(score) {
-  const pct = score / MAX;
-  if (pct < 0.2) return { title:"CLEARED", stamp:"Not Under Investigation", body:"Your pet is a model citizen. Their finances are as clean as their freshly licked paws. Congratulations — no audit required.", tone:"clear" };
-  if (pct < 0.5) return { title:"PERSON OF INTEREST", stamp:"Mild Suspicion", body:"There are irregularities. We recommend reviewing the treat ledger and monitoring all naps lasting more than four hours.", tone:"warn" };
-  if (pct < 0.75) return { title:"UNDER INVESTIGATION", stamp:"Audit Recommended", body:"Strong evidence of fiscal mischief. Your pet is hiding something — possibly in a sock, possibly in Delaware. Proceed with caution.", tone:"warn" };
-  return { title:"GUILTY", stamp:"Notify IRS Immediately", body:"Your pet is, beyond reasonable doubt, committing tax fraud. Do not confront them directly. They are smarter than you. They have a lawyer.", tone:"guilty" };
+/* EVERY WRONG BUTTON */
+
+document.querySelectorAll(".wrong").forEach(button => {
+
+    button.addEventListener("click", function() {
+
+        document.getElementById("notHere").style.display = "block";
+
+    });
+
+});
+
+
+function closePopup() {
+
+    document.getElementById("notHere").style.display = "none";
+
 }
 
-function esc(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 
-function render() {
-  const card = document.getElementById('card');
-  if (step >= QUESTIONS.length) {
-    const total = answers.reduce((s,n)=>s+n,0);
-    const r = verdict(total);
-    card.innerHTML = `
-      <div class="result">
-        <div class="label">Official Determination</div>
-        <div><span class="stamp">${esc(r.stamp)}</span></div>
-        <h2 class="verdict ${r.tone}">${esc(r.title)}</h2>
-        <p class="body-text">${esc(r.body)}</p>
-        <div class="score">Suspicion Score: ${total} / ${MAX}</div>
-        <button class="reset" onclick="reset()">File a New Case</button>
-      </div>`;
-    return;
-  }
-  const Q = QUESTIONS[step];
-  card.innerHTML = `
-    <div class="meta">
-      <span>Question ${step+1} / ${QUESTIONS.length}</span>
-      <span>Case #PT-${1000+step}</span>
-    </div>
-    <div class="progress"><div style="width:${(step/QUESTIONS.length)*100}%"></div></div>
-    <h2 class="question">${esc(Q.q)}</h2>
-    <ul class="options">
-      ${Q.a.map((opt,i)=>`<li><button class="opt" onclick="pick(${opt.score})"><span class="letter">${String.fromCharCode(65+i)}.</span>${esc(opt.label)}</button></li>`).join('')}
-    </ul>`;
+function youWin() {
+
+    document.getElementById("winScreen").style.display = "block";
+
 }
-function pick(s){ answers.push(s); step++; render(); }
-function reset(){ answers=[]; step=0; render(); }
-render();
+
+
+function resetGame() {
+
+    document.getElementById("winScreen").style.display = "none";
+
+}
+
 </script>
+
 </body>
 </html>
