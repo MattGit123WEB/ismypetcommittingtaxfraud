@@ -1,132 +1,103 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <title>VERY NORMAL PHOTOS</title>
+    <link rel="stylesheet" href="style.css">
 
-<meta charset="UTF-8">
+    <style>
+        body {
+            text-align: center;
+        }
 
-<meta
-name="viewport"
-content="width=device-width,initial-scale=1">
+        .friends {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px;
+        }
 
-<title>MY FRIENDS!!!</title>
+        .friend {
+            border: 10px ridge lime;
+            padding: 20px;
+            background: yellow;
+            width: 280px;
+        }
 
-<link rel="stylesheet" href="style.css">
+        .friend img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 8px double red;
+            cursor: pointer;
+        }
 
+        .friend h2 {
+            font-family: Impact, sans-serif;
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
 
-<marquee>
-📸📸📸 YOU WERE NOT SUPPOSED TO FIND THE PHOTO PAGE 📸📸📸
-</marquee>
+    <marquee behavior="alternate" scrollamount="15">
+        📸📸📸 TOTALLY NORMAL FRIEND PHOTOS 📸📸📸
+    </marquee>
 
-<div class="page">
+    <h1>👨‍👩‍👧‍👦 THE PEOPLE RESPONSIBLE FOR THIS</h1>
 
-<h1>
-📸 MY FRIENDS!!! 📸
-</h1>
+    <p>
+        WARNING: THESE PHOTOGRAPHS ARE EXTREMELY IMPORTANT.
+    </p>
 
-<p class="font7">
-CLICK A PHOTO TO ESCAPE BACK TO HOME.
-</p>
+    <hr>
 
+    <div class="friends">
 
-<div class="friendgrid">
+        <div class="friend">
+            <img src="matt.jpg" alt="Matt"
+                 onclick="window.location.href='index.html'">
+            <h2>FRIEND #1</h2>
+        </div>
 
+        <div class="friend">
+            <img src="john.jpg" alt="John"
+                 onclick="window.location.href='index.html'">
+            <h2>FRIEND #2</h2>
+        </div>
 
-<div class="friend">
+        <div class="friend">
+            <img src="claire.jpg" alt="Claire"
+                 onclick="window.location.href='index.html'">
+            <h2>FRIEND #3</h2>
+        </div>
 
-<div class="fakephoto">
-PUT PHOTO 1 HERE
-</div>
+        <div class="friend">
+            <img src="bob.jpg" alt="Bob"
+                 onclick="window.location.href='index.html'">
+            <h2>FRIEND #4</h2>
+        </div>
 
-<a href="index.html">
-CLICK PHOTO
-</a>
+    </div>
 
-</div>
+    <hr>
 
+    <h1>🚨 IMPORTANT 🚨</h1>
 
-<div class="friend">
+    <p>
+        CLICKING A PHOTO WILL RETURN YOU TO THE MAIN WEBSITE.
+    </p>
 
-<div class="fakephoto">
-PUT PHOTO 2 HERE
-</div>
+    <button onclick="window.location.href='index.html'">
+        🏠 RETURN TO THE HORRIBLE WEBSITE
+    </button>
 
-<a href="index.html">
-CLICK PHOTO
-</a>
+    <br><br><br><br>
 
-</div>
-
-
-<div class="friend">
-
-<div class="fakephoto">
-PUT PHOTO 3 HERE
-</div>
-
-<a href="index.html">
-CLICK PHOTO
-</a>
-
-</div>
-
-
-<div class="friend">
-
-<div class="fakephoto">
-PUT PHOTO 4 HERE
-</div>
-
-<a href="index.html">
-CLICK PHOTO
-</a>
-
-</div>
-
-
-<div class="friend">
-
-<div class="fakephoto">
-PUT PHOTO 5 HERE
-</div>
-
-<a href="index.html">
-CLICK PHOTO
-</a>
-
-</div>
-
-
-<div class="friend">
-
-<div class="fakephoto">
-PUT PHOTO 6 HERE
-</div>
-
-<a href="index.html">
-CLICK PHOTO
-</a>
-
-</div>
-
-
-</div>
-
-
-<br><br>
-
-<a
-class="homebutton"
-href="index.html">
-
-🏠 ESCAPE TO HOME
-
-</a>
-
-</div>
+    <marquee>
+        BEST VIEWED ON INTERNET EXPLORER 6 • 800x600 RECOMMENDED • NO REFUNDS
+    </marquee>
 
 </body>
 </html>
